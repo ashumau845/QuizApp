@@ -78,12 +78,13 @@
             android:text="SIGN UP" />
 
         <TextView
-            android:layout_marginTop="24dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:text="Already have an account? Login"
             android:textAlignment="center"
-            android:textColor="@color/colorPrimaryText"
-            android:text="Already have an account? Login" />
+            android:id="@+id/txtsignup"
+            android:textColor="@color/colorPrimaryText" />
     </LinearLayout>
 
 

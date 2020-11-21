@@ -1,5 +1,6 @@
 package com.example.quizapp
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
@@ -12,8 +13,14 @@ class SignUpActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_sign_up)
         firebaseAuth=FirebaseAuth.getInstance()
+
         btnlogin.setOnClickListener {
             signupuser()
+        }
+
+        txtsignup.setOnClickListener {
+            startActivity(Intent(this,LoginActivity::class.java))
+            finish()
         }
     }
 
