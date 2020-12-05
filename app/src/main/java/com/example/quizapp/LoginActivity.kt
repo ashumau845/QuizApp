@@ -1,5 +1,6 @@
 package com.example.quizapp
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
@@ -14,8 +15,14 @@ class LoginActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
         firebaseAuth= FirebaseAuth.getInstance()
+
         btnlogin.setOnClickListener{
             login()
+        }
+
+        btnsignup.setOnClickListener{
+            startActivity(Intent(this@LoginActivity,SignUpActivity::class.java))
+            finish()
         }
     }
 
@@ -30,7 +37,8 @@ class LoginActivity : AppCompatActivity() {
 
         firebaseAuth.signInWithEmailAndPassword(email,password).addOnCompleteListener(this){
             if(it.isSuccessful){
-                Toast.makeText(this,"Success",Toast.LENGTH_SHORT).show()
+                startActivity(Intent(this@LoginActivity,MainActivity::class.java))
+                finish()
             }else{
                 Toast.makeText(this,"Authentication Failed",Toast.LENGTH_SHORT).show()
             }
